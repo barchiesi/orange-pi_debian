@@ -15,8 +15,8 @@ if [ "${2}" = "" ]; then
 fi
 
 
-curr_date=`date +"%m-%d-%Y"`
-sdcard="$output_dir/$curr_date-$linux_dir.img"
+curr_date=`date +"%Y-%m-%d"`
+sdcard="$output_dir/$curr_date.img"
 fatsize=64
 _ext4size=`du -s $linux_dir | awk '{print $1}'`
 linuxsize=$(expr $_ext4size / 1024 + 100)
@@ -47,7 +47,7 @@ mkdir -p $image_boot
 mount ${sdcard}_boot $image_boot
 cp ./h3_binaries/script.bin.OPI-PC* $image_boot
 cp ./h3_binaries/uImage_OPI-2 $image_boot/uImage
-cp ./h3_binaries/script.bin.OPI-2_1080p60 $image_boot/script.bin
+cp ./h3_binaries/script.bin.OPI-PC_1080p60 $image_boot/script.bin
 umount $image_boot
 
 mkdir -p $image_linux

@@ -17,7 +17,7 @@ apt-get -y update
 apt-get -y upgrade
 apt-get -y install locales
 apt-get -y install dialog lsb-release --no-install-recommends
-apt-get -y install ifupdown dbus
+apt-get -y install ifupdown dbus openssh-server
 apt-get -y clean
 
 
